@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  max-width: 500px;
+  min-height: 800px;
+  margin: 0px auto;
+  
+}
+
+.full-wrapper{
+
+  padding: 50px 50px;
+  
+}
