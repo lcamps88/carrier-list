@@ -1,13 +1,22 @@
 .container {
   width: 100%;
   max-width: 500px;
-  min-height: 800px;
+  height: auto;
   margin: 0px auto;
-  
+  background-color: bisque;
+  padding: 20px;
 }
 
 .full-wrapper{
-
+  display: flex;
   padding: 50px 50px;
-  
+  align-items: center;
+  justify-content: center;
+}
+
+
+.PrimaryBTN{
+  background-color: black;
+  padding: 10px 20px;
+  color: white;
 }

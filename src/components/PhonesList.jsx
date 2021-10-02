@@ -1,10 +1,9 @@
 import React from 'react'
+import '../App.css'
 import CsvDownloader from 'react-csv-downloader'
 
 const PhonesList = ({ list }) => {
-  console.log('listPhone', list)
 
-  const title = 'LookUp'
   let att = list?.filter(
     (phoneWr) =>
       phoneWr.wireless === 'Y' &&
@@ -12,7 +11,19 @@ const PhonesList = ({ list }) => {
       phoneWr.name !== 'NEW CINGULAR WIRELESS PCS, LLC'
   )
 
-console.log(att);
+  // const FilterData = () => {
+  //   let att = []
+
+  //   att = list?.filter(
+  //     (phoneWr) =>
+  //       phoneWr.wireless === 'Y' &&
+  //       phoneWr.status === 'success' &&
+  //       phoneWr.name !== 'NEW CINGULAR WIRELESS PCS, LLC'
+  //   )
+  // }
+
+  console.log('Data No Filter', list)
+  console.log('data Filter', att)
 
   return (
     <div>
@@ -27,11 +38,21 @@ console.log(att);
       <div>
         <CsvDownloader
           datas={att}
-          filename={title}
+          filename={'NoATT929'}
           extension=".csv"
           separator=";"
         >
-          <button>Export</button>
+          <button className="PrimaryBTN">Export Filter LookUp</button>
+        </CsvDownloader>
+
+        <br />
+        <CsvDownloader
+          datas={list}
+          filename={'Data No Filter'}
+          extension=".csv"
+          separator=";"
+        >
+          <button className="PrimaryBTN">Export All Data</button>
         </CsvDownloader>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import './App.css'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-//import PhonesList from './components/PhonesList'
-import carrierList from './data/datalist'
+import PhonesList from './components/PhonesList'
+import carrierList from './data/NoATT-end'
 
 const App = () => {
   const [listPhone, setListPhone] = useState([])
@@ -30,7 +30,7 @@ const App = () => {
   }
 
   useEffect(() => {
-   // getApiData()
+     getApiData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -38,14 +38,12 @@ const App = () => {
 
   return (
     <div className="full-wrapper">
-      <main className="py-3">
         <div className="container">
           <h1>List Carrier</h1>
-          {/* <PhonesList list={listPhone} /> */}
+          <PhonesList list={listPhone} />
         </div>
-      </main>
+     
     </div>
   )
 }
-
 export default App
